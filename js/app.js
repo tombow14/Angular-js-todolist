@@ -35,10 +35,13 @@ App.controller("TodoCtrl", function ($scope, localStorageService) {
 	};
 
 	$scope.addTodo = function () {
+
+		if($scope.newTodo!=''){
 		/*Should prepend to array*/
 		$scope.model[$scope.currentShow].list.splice(0, 0, {taskName: $scope.newTodo, isDone: false });
 		/*Reset the Field*/
 		$scope.newTodo = "";
+	}
 	};
 
 	$scope.deleteTodo = function (item) {
